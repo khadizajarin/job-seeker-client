@@ -17,11 +17,13 @@ import AppliedJobs from './assets/components/Pages/AppliedJobs';
 import Blogs from './assets/components/Layout/Blogs';
 import AllJobs from './assets/components/Pages/AllJobs';
 import JobsDetails from './assets/components/Pages/JobsDetails';
+import ErrorRoute from './assets/components/Pages/ErrorRoute';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Route></Route>,
+    errorElement:<ErrorRoute></ErrorRoute>,
     children: [
       {
         path : '/',

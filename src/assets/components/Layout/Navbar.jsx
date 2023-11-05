@@ -11,7 +11,6 @@ const Navbar = () => {
     const handleLogOut = () => {
         logOut()
         .then( () => {
-            // console.log('logged out successful');
             Swal.fire(
                 'Logged Out!',
                 'You are logged out successfully!',
@@ -21,17 +20,15 @@ const Navbar = () => {
         .catch( error => {
             console.error(error);
         })
-
     }
 
-    const navlinks =
-        <> 
+    const navlinks =<> 
         <li> <NavLink to='/' style={({ isActive }) => ({ 
                 color: isActive ? 'white' : '' })}>Home</NavLink></li>
-        <li> <NavLink to='/allJobs' style={({ isActive }) => ({ 
-                color: isActive ? 'white' : '' })}>All jobs</NavLink></li>
         <li> <NavLink to='/blogs'style={({ isActive }) => ({ 
                 color: isActive ? 'white' : '' })}>Blogs</NavLink></li>
+        <li> <NavLink to='/allJobs' style={({ isActive }) => ({ 
+                color: isActive ? 'white' : '' })}>All jobs</NavLink></li>
 
         {
             user && <>
@@ -57,8 +54,7 @@ const Navbar = () => {
         <> 
         <button className="btn btn-glass rounded-full"> <Link to='/login'>Login</Link></button>
         <button className="btn btn-glass ml-4 rounded-full"> <Link to='/register'>Register</Link></button>
-        </>
-       
+        </>  
     }</> 
     
     

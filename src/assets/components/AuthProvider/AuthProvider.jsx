@@ -4,7 +4,7 @@ import app from "./firebase.console";
 
 
 
-export const AuthContext = createContext(null);
+export const AuthContext = createContext();
 
 const auth = getAuth(app);
 
@@ -14,11 +14,13 @@ const AuthProvider = ({children}) => {
     const [loading, setLoading] = useState(true);
     const [locationState, setLocationState] = useState(null);
 
+   
+
     //create user with google
     const provider = new GoogleAuthProvider();
     const createUserGoogle = () => {
         setLoading(true);
-        return signInWithPopup(auth, provider);
+        return signInWithPopup(auth, provider);   
     }
 
     //create user for register route
@@ -56,18 +58,19 @@ const AuthProvider = ({children}) => {
     const authInfo ={
         user,
         loading,
+        setLoading,
         setUser,
         createUser,
         signIn,
         createUserGoogle,
         logOut,
         locationState, 
-        setLocationState
+        setLocationState,
     }
 
     
     return (
-        <AuthContext.Provider value = {authInfo}>
+        <AuthContext.Provider value={authInfo}>
                 {children}
         </AuthContext.Provider>
     );

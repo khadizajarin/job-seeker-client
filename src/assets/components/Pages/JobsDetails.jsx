@@ -8,7 +8,7 @@ import Swal from "sweetalert2";
 
 
 const JobsDetails = () => {
-    const {user, loading} =  useContext(AuthContext);
+   const {user,loading, setLoading} = useContext(AuthContext);
     console.log(user);
     const detail = useLoaderData();
     const {_id, Job_Title} = detail;
@@ -23,11 +23,12 @@ const JobsDetails = () => {
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
+            setLoading(true);
           })
           .catch((error) => {
             console.error(error);
           });
-      }, [_id]);
+      }, [_id,setLoading]);
 
     const deadline = detail.Application_Deadline;
     const currentDate = new Date().toISOString().split('T')[0];
@@ -54,9 +55,9 @@ const JobsDetails = () => {
             body: JSON.stringify(applyJob)
           })
           .then((res) => res.json())
-          .then((data) => {
-            
+          .then((data) => { 
             if(data.insertedId){
+              setLoading(true);
               Swal.fire({
                 icon: "success",
                 title: 'CV sent to the employers email',
@@ -124,8 +125,7 @@ const JobsDetails = () => {
                                 </div>
                             </div>
                         </dialog>
-                    </>
-                        
+                    </>     
                     )}
                     </div>
                 </div>
