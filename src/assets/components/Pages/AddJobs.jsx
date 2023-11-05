@@ -28,7 +28,7 @@ const AddJobs = () => {
     
             console.log(newJob);
     
-            fetch('http://localhost:5000/addJobs',{
+            fetch('http://localhost:5000/Jobs',{
                 method: 'POST',
                 headers: {
                     'content-type' : 'application/json'
@@ -57,7 +57,7 @@ const AddJobs = () => {
             });
         }
     const {user} = useContext(AuthContext);
-    const [deadline, setDeadline] = useState(new Date());
+   
     const [startDate, setStartDate] = useState(new Date()); 
     return (
         <div>
@@ -90,8 +90,7 @@ const AddJobs = () => {
                                 <label className="label">
                                     <span className="label-text">Job Posting Date</span>
                                 </label>
-                                <DatePicker name="postdate" className="input input-bordered rounded-full" required selected={new Date()}onChange={(date) => setStartDate(date)}
-                                    />
+                                <DatePicker name="postdate" className="input input-bordered rounded-full" required selected={new Date()}onChange={(date) => setStartDate(date)}/>
 
                             </div>
 
