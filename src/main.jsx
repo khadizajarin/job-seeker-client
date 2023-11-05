@@ -15,6 +15,7 @@ import AddJobs from './assets/components/Pages/AddJobs';
 import MyJobs from './assets/components/Pages/MyJobs';
 import AppliedJobs from './assets/components/Pages/AppliedJobs';
 import Blogs from './assets/components/Layout/Blogs';
+import AllJobs from './assets/components/Pages/AllJobs';
 
 const router = createBrowserRouter([
   {
@@ -39,7 +40,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/allJobs',
-        // element:
+        element: <AllJobs></AllJobs>
       },
       {
         path:'/addJobs',
