@@ -7,6 +7,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { Fade } from "react-awesome-reveal";
 
 const Home = () => {
     const [jobs, setJobs] = useState([]);
@@ -31,6 +32,7 @@ const Home = () => {
         <div>
             <Navbar></Navbar>
             <Banner></Banner>
+
             <Marquee className="h-16" behavior="scroll" direction="left" scrollamount="4">
                 Join Team Apple! We are Hiring! Are you passionate about technology, innovation, and creating products that change the world? Apple is looking for talented individuals to join our team and be a part of something extraordinary. Position: [Job Title]
                 Location: [Location]
@@ -231,6 +233,26 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+
+            <hr className="divider" />
+            <div className="text-center font-bold text-5xl bg-slate-300 mx-auto max-w-7xl" >
+                
+                <Fade cascade>
+                    <div className="flex flex-col lg:flex-row items-center justify-center ">
+                        <img src="https://media.istockphoto.com/id/1166516811/photo/silhouettes-of-happy-businessperson-success-of-business-concept.webp?b=1&s=170667a&w=0&k=20&c=_PFd-LPxhzgj4kjUt6jKThToyxU-m4mGBzOnjNLxyhk=" alt="" />
+                        <p>Come to conquere</p>
+                    </div>
+                    <div className="flex flex-col-reverse lg:flex-row  items-center justify-center ">
+                        <p>Believe. Achieve</p>
+                        <img src="https://media.istockphoto.com/id/1204743098/photo/partnership-of-business-concept-group-of-businessperson-customer-support-teamwork.webp?b=1&s=170667a&w=0&k=20&c=_A273icsZtofWIdopwp9dyw55p0XQpqdiufCTXxi8GY=" alt="" /> 
+                    </div>
+                    <div className="flex flex-col lg:flex-row  items-center justify-center ">
+                        <img src="https://media.istockphoto.com/id/1174511028/photo/stack-of-hands-unity-and-teamwork-concept.webp?b=1&s=170667a&w=0&k=20&c=iAcz6X92cheyPQJOw0cieUvKofnzPpAbnzHDGTWAqS4=" alt="" />
+                        <p>Triumph with  <br />determination</p>
+                    </div>
+                </Fade>    
+            </div>
+            <hr className="divider" />
 
 
             <div className="grid lg:grid-cols-2 lg:max-w-7xl lg:mx-auto mt-6 justify-between items-center">
