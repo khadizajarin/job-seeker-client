@@ -46,193 +46,199 @@ const Home = () => {
                 Apple Inc. is an equal opportunity employer.
             </Marquee>
 
-            {/* tab list 1 */}
-            <div className="mx-10">
-                <h1 className="font-bold text-3xl my-4">All Jobs</h1>
-                <div >
-                <Tabs>
-                    <TabList>
+            <div className="max-w-7xl  mx-auto">
+                <h1 className="text-7xl mx-7 my-4">Types of Jobs You Can Find!</h1>
+                {/* tab list 1 */}
+                <div className="mx-10">
+                    <h1 className="font-bold text-3xl my-4">All Jobs</h1>
+                    <div >
+                    <Tabs>
+                        <TabList>
+                            {jobs.slice(0, 2).map((job) => (
+                            <Tab key={job._id}>{job.Job_Title}</Tab>
+                            ))}
+                            <Tab>All Jobs</Tab>
+                        </TabList>
+
                         {jobs.slice(0, 2).map((job) => (
-                        <Tab key={job._id}>{job.Job_Title}</Tab>
-                        ))}
-                        <Tab>All Jobs</Tab>
-                    </TabList>
-
-                    {jobs.slice(0, 2).map((job) => (
-                        <TabPanel key={job._id}>
-                        <h2>{job.Job_Description}</h2>
-                        <p>{job.Job_Description}</p>
-                            <p>{job.Job_Category}</p>
-                            <p>{job.Salary_Range}</p>
-                            <p> Posted on : {job.Job_Posting_Date}</p>
-                            <p> Posted By : {job.Employer_Name}</p>
-                            <p>Application Deadline : {job.Application_Deadline}</p>
-                            <button className="btn btn-glass rounded-full"><Link to={`/allJobs/${job._id}`}> Details</Link></button>
-                        </TabPanel>
-                    ))}
-
-                    <TabPanel>
-                        <h2>All Jobs</h2>
-                    </TabPanel>
-                </Tabs>
-
-                </div>
-            </div>
-
-            {/* tab list 2 */}
-            <div className="mx-10">
-                <h1 className="font-bold text-3xl my-4">Remote Jobs</h1>
-                <div >
-                <Tabs>
-                    <TabList>
-                        {jobs
-                        .filter((job) => job.Job_Category === "Remote")
-                        .slice(0, 2)
-                        .map((job) => (
-                            <Tab key={job._id}>{job.Job_Title}</Tab>
-                        ))}
-                        <Tab>All Jobs</Tab>
-                    </TabList>
-
-                    {jobs
-                        .filter((job) => job.Job_Category === "Remote")
-                        .slice(0, 2)
-                        .map((job) => (
-                        <TabPanel key={job._id}>
+                            <TabPanel key={job._id}>
                             <h2>{job.Job_Description}</h2>
                             <p>{job.Job_Description}</p>
-                            <p>{job.Job_Category}</p>
-                            <p>{job.Salary_Range}</p>
-                            <p> Posted on : {job.Job_Posting_Date}</p>
-                            <p> Posted By : {job.Employer_Name}</p>
-                            <p>Application Deadline : {job.Application_Deadline}</p>
-                            <button className="btn btn-glass rounded-full"><Link to={`/allJobs/${job._id}`}> Details</Link></button>
-                        </TabPanel>
+                                <p>{job.Job_Category}</p>
+                                <p>{job.Salary_Range}</p>
+                                <p> Posted on : {job.Job_Posting_Date}</p>
+                                <p> Posted By : {job.Employer_Name}</p>
+                                <p>Application Deadline : {job.Application_Deadline}</p>
+                                <button className="btn btn-glass rounded-full"><Link to={`/allJobs/${job._id}`}> Details</Link></button>
+                            </TabPanel>
                         ))}
+
                         <TabPanel>
-                        <h2>All Jobs</h2>
+                            <h2>All Jobs</h2>
                         </TabPanel>
                     </Tabs>
-                </div>
-            </div>
 
-            {/* tab list 3 */}
-            <div className="mx-10">
-                <h1 className="font-bold text-3xl my-4">On Site Jobs</h1>
-                <div >
-                <Tabs>
-                    <TabList>
+                    </div>
+                </div>
+
+                {/* tab list 2 */}
+                <div className="mx-10">
+                    <h1 className="font-bold text-3xl my-4">Remote Jobs</h1>
+                    <div >
+                    <Tabs>
+                        <TabList>
+                            {jobs
+                            .filter((job) => job.Job_Category === "Remote")
+                            .slice(0, 2)
+                            .map((job) => (
+                                <Tab key={job._id}>{job.Job_Title}</Tab>
+                            ))}
+                            <Tab>All Jobs</Tab>
+                        </TabList>
+
                         {jobs
-                        .filter((job) => job.Job_Category === "On Site")
-                        .slice(0, 2)
-                        .map((job) => (
-                            <Tab key={job._id}>{job.Job_Title}</Tab>
-                        ))}
-                        <Tab>All Jobs</Tab>
-                    </TabList>
-
-                    {jobs
-                        .filter((job) => job.Job_Category === "On Site")
-                        .slice(0, 2)
-                        .map((job) => (
-                        <TabPanel key={job._id}>
-                            <h2>{job.Job_Description}</h2>
-                            <p>{job.Job_Description}</p>
-                            <p>{job.Job_Category}</p>
-                            <p>{job.Salary_Range}</p>
-                            <p> Posted on : {job.Job_Posting_Date}</p>
-                            <p> Posted By : {job.Employer_Name}</p>
-                            <p>Application Deadline : {job.Application_Deadline}</p>
-                            <button className="btn btn-glass rounded-full"><Link to={`/allJobs/${job._id}`}> Details</Link></button>
-                        </TabPanel>
-                        ))}
-                        <TabPanel>
-                        <h2>All Jobs</h2>
-                        </TabPanel>
-                    </Tabs>
+                            .filter((job) => job.Job_Category === "Remote")
+                            .slice(0, 2)
+                            .map((job) => (
+                            <TabPanel key={job._id}>
+                                <h2>{job.Job_Description}</h2>
+                                <p>{job.Job_Description}</p>
+                                <p>{job.Job_Category}</p>
+                                <p>{job.Salary_Range}</p>
+                                <p> Posted on : {job.Job_Posting_Date}</p>
+                                <p> Posted By : {job.Employer_Name}</p>
+                                <p>Application Deadline : {job.Application_Deadline}</p>
+                                <button className="btn btn-glass rounded-full"><Link to={`/allJobs/${job._id}`}> Details</Link></button>
+                            </TabPanel>
+                            ))}
+                            <TabPanel>
+                            <h2>All Jobs</h2>
+                            </TabPanel>
+                        </Tabs>
+                    </div>
                 </div>
-            </div>
 
+                {/* tab list 3 */}
+                <div className="mx-10">
+                    <h1 className="font-bold text-3xl my-4">On Site Jobs</h1>
+                    <div >
+                    <Tabs>
+                        <TabList>
+                            {jobs
+                            .filter((job) => job.Job_Category === "On Site")
+                            .slice(0, 2)
+                            .map((job) => (
+                                <Tab key={job._id}>{job.Job_Title}</Tab>
+                            ))}
+                            <Tab>All Jobs</Tab>
+                        </TabList>
 
-            {/* tab list 4 */}
-            <div className="mx-10">
-                <h1 className="font-bold text-3xl my-4">Part Time Jobs</h1>
-                <div >
-                <Tabs>
-                    <TabList>
                         {jobs
-                        .filter((job) => job.Job_Category === "Part-Time")
-                        .slice(0, 2)
-                        .map((job) => (
-                            <Tab key={job._id}>{job.Job_Title}</Tab>
-                        ))}
-                        <Tab>All Jobs</Tab>
-                    </TabList>
-
-                    {jobs
-                        .filter((job) => job.Job_Category === "Part-Time")
-                        .slice(0, 2)
-                        .map((job) => (
-                        <TabPanel key={job._id}>
-                            <h2>{job.Job_Description}</h2>
-                            <p>{job.Job_Description}</p>
-                            <p>{job.Job_Category}</p>
-                            <p>{job.Salary_Range}</p>
-                            <p> Posted on : {job.Job_Posting_Date}</p>
-                            <p> Posted By : {job.Employer_Name}</p>
-                            <p>Application Deadline : {job.Application_Deadline}</p>
-                            <button className="btn btn-glass rounded-full"><Link to={`/allJobs/${job._id}`}> Details</Link></button>
-                        </TabPanel>
-                        ))}
-                        <TabPanel>
-                        <h2>All Jobs</h2>
-                        </TabPanel>
-                    </Tabs>
+                            .filter((job) => job.Job_Category === "On Site")
+                            .slice(0, 2)
+                            .map((job) => (
+                            <TabPanel key={job._id}>
+                                <h2>{job.Job_Description}</h2>
+                                <p>{job.Job_Description}</p>
+                                <p>{job.Job_Category}</p>
+                                <p>{job.Salary_Range}</p>
+                                <p> Posted on : {job.Job_Posting_Date}</p>
+                                <p> Posted By : {job.Employer_Name}</p>
+                                <p>Application Deadline : {job.Application_Deadline}</p>
+                                <button className="btn btn-glass rounded-full"><Link to={`/allJobs/${job._id}`}> Details</Link></button>
+                            </TabPanel>
+                            ))}
+                            <TabPanel>
+                            <h2>All Jobs</h2>
+                            </TabPanel>
+                        </Tabs>
+                    </div>
                 </div>
-            </div>
 
 
-            {/* tab list  5*/}
-            <div className="mx-10">
-                <h1 className="font-bold text-3xl my-4">Hybrid </h1>
-                <div >
-                <Tabs>
-                    <TabList>
+                {/* tab list 4 */}
+                <div className="mx-10">
+                    <h1 className="font-bold text-3xl my-4">Part Time Jobs</h1>
+                    <div >
+                    <Tabs>
+                        <TabList>
+                            {jobs
+                            .filter((job) => job.Job_Category === "Part-Time")
+                            .slice(0, 2)
+                            .map((job) => (
+                                <Tab key={job._id}>{job.Job_Title}</Tab>
+                            ))}
+                            <Tab>All Jobs</Tab>
+                        </TabList>
+
                         {jobs
-                        .filter((job) => job.Job_Category === "Hybrid")
-                        .slice(0, 2)
-                        .map((job) => (
-                            <Tab key={job._id}>{job.Job_Title}</Tab>
-                        ))}
-                        <Tab>All Jobs</Tab>
-                    </TabList>
+                            .filter((job) => job.Job_Category === "Part-Time")
+                            .slice(0, 2)
+                            .map((job) => (
+                            <TabPanel key={job._id}>
+                                <h2>{job.Job_Description}</h2>
+                                <p>{job.Job_Description}</p>
+                                <p>{job.Job_Category}</p>
+                                <p>{job.Salary_Range}</p>
+                                <p> Posted on : {job.Job_Posting_Date}</p>
+                                <p> Posted By : {job.Employer_Name}</p>
+                                <p>Application Deadline : {job.Application_Deadline}</p>
+                                <button className="btn btn-glass rounded-full"><Link to={`/allJobs/${job._id}`}> Details</Link></button>
+                            </TabPanel>
+                            ))}
+                            <TabPanel>
+                            <h2>All Jobs</h2>
+                            </TabPanel>
+                        </Tabs>
+                    </div>
+                </div>
 
-                    {jobs
-                        .filter((job) => job.Job_Category === "Hybrid")
-                        .slice(0, 2)
-                        .map((job) => (
-                        <TabPanel key={job._id}>
-                            <h2>{job.Job_Description}</h2>
-                            <p>{job.Job_Description}</p>
-                            <p>{job.Job_Category}</p>
-                            <p>{job.Salary_Range}</p>
-                            <p> Posted on : {job.Job_Posting_Date}</p>
-                            <p> Posted By : {job.Employer_Name}</p>
-                            <p>Application Deadline : {job.Application_Deadline}</p>
-                            <button className="btn btn-glass rounded-full"><Link to={`/allJobs/${job._id}`}> Details</Link></button>
-                        </TabPanel>
-                        ))}
-                        <TabPanel>
-                        <h2>All Jobs</h2>
-                        </TabPanel>
-                    </Tabs>
+
+                {/* tab list  5*/}
+                <div className="mx-10">
+                    <h1 className="font-bold text-3xl my-4">Hybrid </h1>
+                    <div >
+                    <Tabs>
+                        <TabList>
+                            {jobs
+                            .filter((job) => job.Job_Category === "Hybrid")
+                            .slice(0, 2)
+                            .map((job) => (
+                                <Tab key={job._id}>{job.Job_Title}</Tab>
+                            ))}
+                            <Tab>All Jobs</Tab>
+                        </TabList>
+
+                        {jobs
+                            .filter((job) => job.Job_Category === "Hybrid")
+                            .slice(0, 2)
+                            .map((job) => (
+                            <TabPanel key={job._id}>
+                                <h2>{job.Job_Description}</h2>
+                                <p>{job.Job_Description}</p>
+                                <p>{job.Job_Category}</p>
+                                <p>{job.Salary_Range}</p>
+                                <p> Posted on : {job.Job_Posting_Date}</p>
+                                <p> Posted By : {job.Employer_Name}</p>
+                                <p>Application Deadline : {job.Application_Deadline}</p>
+                                <button className="btn btn-glass rounded-full"><Link to={`/allJobs/${job._id}`}> Details</Link></button>
+                            </TabPanel>
+                            ))}
+                            <TabPanel>
+                            <h2>All Jobs</h2>
+                            </TabPanel>
+                        </Tabs>
+                    </div>
                 </div>
             </div>
 
 
-            <div className="grid grid-rows-2 lg:grid-cols-2 lg:max-w-7xl lg:mx-auto mt-6 items-center">
-                <div className="text-3xl font-bold mx-auto text-center "> 
-                    John Doe shared his resume for sample. Let us have a look
+            <div className="grid lg:grid-cols-2 lg:max-w-7xl lg:mx-auto mt-6 justify-between items-center">
+                <div className="text-center" > 
+                    <p className=" m-4">A Curriculum Vitae (CV) is a comprehensive document that provides a detailed account of an individual educational and professional history. Typically used for academic and research positions, a CV includes sections like personal information, education, work experience, publications, awards, skills, and references. Unlike a resume, a CV can be extensive, with no strict length restrictions, and is highly customized to the specific job or opportunity being pursued. It often follows a chronological format, emphasizing the most recent achievements and experiences. CVs are commonly used in academic and research contexts and are favored in many countries, especially in Europe, for their ability to showcase an individuals qualifications and expertise in-depth.</p>
+                    <p className="text-3xl font-bold ">
+                    John Doe shared his resume for sample. Let us have a short look
+                    </p>
                 </div>
                 <div className="cv-container">
                     <header>
@@ -286,7 +292,7 @@ const Home = () => {
             </div>
 
             <div className="flex flex-col lg:lex-row gap-4 max-w-7xl mx-auto my-12  items-center justify-center">
-                <div className="text-6xl">Tell us how did you feel to visit our site by swapping!</div>
+                <div className="text-6xl">Tell us how did you feel to <br /> visit our site by swapping!</div>
                 <label className="swap swap-flip text-9xl">
                     {/* this hidden checkbox controls the state */}
                     <input type="checkbox" />
