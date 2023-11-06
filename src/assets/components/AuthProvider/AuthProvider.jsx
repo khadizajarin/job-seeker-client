@@ -8,7 +8,6 @@ export const AuthContext = createContext();
 
 const auth = getAuth(app);
 
-
 const AuthProvider = ({children}) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -24,10 +23,28 @@ const AuthProvider = ({children}) => {
     }
 
     //create user for register route
-    const createUser = (name, email, password, photoURL) => {
+    const createUser = async (email, password, name, photoURL) => {
         setLoading(true);
-        return createUserWithEmailAndPassword (auth, email, password);
-    }
+        try {
+            const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+            const user = userCredential.user;
+            console.log(user);
+          
+            await user.updateProfile({
+              displayName: name,
+              photoURL: photoURL,
+            });
+            setLoading(false);
+            console.log(user);
+            return user;
+          } catch (error) {
+            setLoading(false);
+            console.error(error);
+          }
+      }
+
+      
+      
 
     //signIn user for login route
     const signIn = (email,password) => {
@@ -44,7 +61,7 @@ const AuthProvider = ({children}) => {
     //observer
     useEffect( () => {
         const unSubscribe = onAuthStateChanged(auth, currentUser => {
-            console.log('user in the auth state changed', currentUser);
+            console.log(currentUser);
             setUser(currentUser);
             setLoading(false);
         })
@@ -58,7 +75,6 @@ const AuthProvider = ({children}) => {
     const authInfo ={
         user,
         loading,
-        setLoading,
         setUser,
         createUser,
         signIn,

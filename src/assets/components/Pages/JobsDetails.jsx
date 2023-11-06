@@ -23,7 +23,6 @@ const JobsDetails = () => {
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
-            setLoading(true);
           })
           .catch((error) => {
             console.error(error);

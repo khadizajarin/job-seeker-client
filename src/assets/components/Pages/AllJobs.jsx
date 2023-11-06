@@ -61,8 +61,7 @@ const AllJobs = () => {
                             </div>
                         </div>
                     </div>
-                </animated.h1>
-                
+                </animated.h1>    
             </div>
           ))}
         </div>
