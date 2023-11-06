@@ -27,7 +27,7 @@ const JobsDetails = () => {
           .catch((error) => {
             console.error(error);
           });
-      }, [_id,setLoading]);
+      }, [_id]);
 
     const deadline = detail.Application_Deadline;
     const currentDate = new Date().toISOString().split('T')[0];
@@ -56,7 +56,6 @@ const JobsDetails = () => {
           .then((res) => res.json())
           .then((data) => { 
             if(data.insertedId){
-              setLoading(true);
               Swal.fire({
                 icon: "success",
                 title: 'CV sent to the employers email',
