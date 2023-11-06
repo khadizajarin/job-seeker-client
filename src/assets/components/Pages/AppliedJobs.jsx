@@ -4,10 +4,13 @@ import Footer from '../Layout/Footer';
 import Navbar from '../Layout/Navbar';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import Swal from 'sweetalert2';
+import { usePDF } from 'react-to-pdf';
 
 const AppliedJobs = () => {
     const {user} = useContext(AuthContext);
     const [applications, setApplications] = useState([]);
+
+    const { toPDF, targetRef } = usePDF({filename: 'page.pdf'});
 
     useEffect(() => {
         fetch('http://localhost:5000/applied', {
@@ -128,7 +131,7 @@ const AppliedJobs = () => {
             <div>
               <h1 className='text-4xl font-bold my-6 text-center'>Your Applications:</h1>
             </div>
-            <div>
+            <div ref={targetRef}>
                 {applications
                 .map(application => (application.email === user.email && (
                         <div key={application._id} className="hero  bg-gray-200">
@@ -144,12 +147,19 @@ const AppliedJobs = () => {
                               <p>Application Deadline : {application.detail.Application_Deadline}</p>
                               <p>Application till now : {application.detail.Job_Applicants_Number}</p>
                               <button className="btn btn-glass rounded-full mt-4" onClick={() => handleDeleteApplication(application._id)}>Delete</button>
+                              <button className="btn btn-glass rounded-full mt-4" onClick={() => toPDF()}>Download PDF</button>
                             </div>
                           </div>
                         </div>
                 )
                 ))}
             </div>
+            {/* <div>
+         <button onClick={() => toPDF()}>Download PDF</button>
+         <div ref={targetRef}>
+            Content to be generated to PDF
+         </div>
+      </div> */}
             <Footer></Footer>
         </div>
     );

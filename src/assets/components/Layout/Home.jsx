@@ -9,8 +9,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Fade } from "react-awesome-reveal";
 
-import {motion, AnimatePresence} from "framer-motion";
-import "../Pages/styles.css";
+import {motion} from "framer-motion";
 
 const Home = () => {
 

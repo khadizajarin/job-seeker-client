@@ -48,7 +48,7 @@ const AuthProvider = ({children}) => {
 
     //signIn user for login route
     const signIn = (email,password) => {
-        setLoading(true);
+        setLoading();
         return signInWithEmailAndPassword(auth, email, password);
     }
 
