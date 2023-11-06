@@ -60,6 +60,9 @@ const MyJobs = () => {
           })
     }
 
+    const handleUpdateJOb = (_id) => {
+
+    }
     return (
         <div>
             <Navbar></Navbar>
@@ -82,6 +85,7 @@ const MyJobs = () => {
                         <p>Application Deadline: {job.Application_Deadline}</p>
                         <p>Applications till now: {job.Job_Applicants_Number}</p>
                         <button className="btn btn-glass rounded-full mt-4" onClick={() => handleDeleteJob(job._id)}>Delete</button>
+                        <button className="btn btn-glass rounded-full mt-4" ><Link to={`/update/${job._id}`}>Update</Link></button>
                       </div>
                     </div>
                   </div>

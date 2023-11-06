@@ -109,8 +109,8 @@ const AddJobs = () => {
                                 </div>
 
                                 <div className='flex flex-row'>
-                                    <input className='mr-1' type="radio" name="jobCategory" id="hybrid" value="hybrid"/>
-                                    <label className='mr-4' htmlFor="hybrid">Hybrid</label>
+                                    <input className='mr-1' type="radio" name="jobCategory" id="part-time" value="part-time"/>
+                                    <label className='mr-4' htmlFor="part-time">Part time</label>
                                 </div>
 
                                 <div className='flex flex-row'>
@@ -157,7 +157,6 @@ const AddJobs = () => {
                             <div className="form-control mt-6">
                                 <button className="btn btn-glass rounded-full mb-4">Post</button>
                                 <button className="btn btn-glass rounded-full">Details</button>
-                                {/* <p className="mt-4 text-center">Registered already? Then go to <span className="font-bold"><Link to="/Login">Login</Link></span></p> */}
                             </div>
                         </form>
                     </div>
