@@ -228,6 +228,72 @@ const Home = () => {
                     </Tabs>
                 </div>
             </div>
+
+
+            <div className="grid grid-rows-2 lg:grid-cols-2 lg:max-w-7xl lg:mx-auto mt-6 items-center">
+                <div className="text-3xl font-bold mx-auto text-center "> 
+                    John Doe shared his resume for sample. Let us have a look
+                </div>
+                <div className="cv-container">
+                    <header>
+                        <h1 className="font-bold text-lg mt-4">John Doe</h1>
+                        <p>Web Developer</p>
+                    </header>
+
+                    <section className="contact">
+                        <h2 className="font-bold text-lg mt-4">Contact Information</h2>
+                        <address>
+                        <p>Email: john@example.com</p>
+                        <p>Phone: (123) 456-7890</p>
+                        <p>Website: www.johndoe.com</p>
+                        <p>LinkedIn: www.linkedin.com/in/johndoe</p>
+                        </address>
+                    </section>
+
+                    <section className="education">
+                        <h2 className="font-bold text-lg mt-4">Education</h2>
+                        <div className="education-entry">
+                        <h3>University of Computer Science</h3>
+                        <p>Bachelor of Science in Computer Science</p>
+                        <p>Graduated: May 20XX</p>
+                        </div>
+                    </section>
+
+                    <section className="experience">
+                        <h2 className="font-bold text-lg mt-4">Work Experience</h2>
+                        <div className="experience-entry">
+                        <h3>ABC Tech Inc.</h3>
+                        <p>Web Developer</p>
+                        <p>June 20XX - Present</p>
+                        <ul>
+                            <li>Developed and maintained web applications using React and Node.js.</li>
+                            <li>Collaborated with a team to implement new features and improve user experience.</li>
+                        </ul>
+                        </div>
+                    </section>
+
+                    <section className="skills">
+                        <h2 className="font-bold text-lg mt-4">Skills</h2>
+                        <ul>
+                        <li>JavaScript</li>
+                        <li>React</li>
+                        <li>Node.js</li>
+                        <li>HTML/CSS</li>
+                        <li>Version Control (Git)</li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+
+            <div className="flex flex-col lg:lex-row gap-4 max-w-7xl mx-auto my-12  items-center justify-center">
+                <div className="text-6xl">Tell us how did you feel to visit our site by swapping!</div>
+                <label className="swap swap-flip text-9xl">
+                    {/* this hidden checkbox controls the state */}
+                    <input type="checkbox" />
+                    <div className="swap-on">😈</div>
+                    <div className="swap-off">😇</div>
+                </label>
+            </div>
             <Footer></Footer>
         </div>
     );

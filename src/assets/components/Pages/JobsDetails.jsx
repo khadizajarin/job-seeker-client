@@ -8,32 +8,36 @@ import Swal from "sweetalert2";
 
 
 const JobsDetails = () => {
-   const {user,loading, setLoading} = useContext(AuthContext);
+
+  const detail = useLoaderData();
+    console.log(detail);
+
+    const {user} = useContext(AuthContext);
     console.log(user);
-    const detail = useLoaderData();
+
     const {_id, Job_Title} = detail;
 
-    useEffect(() => {
-        fetch(`http://localhost:5000/Jobs/${_id}`, {
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json',
-          }
-        })
-          .then((res) => res.json())
-          .then((data) => {
-            console.log(data);
-          })
-          .catch((error) => {
-            console.error(error);
-          });
-      }, [_id]);
+    // useEffect(() => {
+    //     fetch(`http://localhost:5000/Jobs/${_id}`, {
+    //       method: 'GET',
+    //       headers: {
+    //         'Content-Type': 'application/json',
+    //       }
+    //     })
+    //       .then(res => res.json())
+    //       .then(data => {
+    //         console.log(data);
+    //       })
+    //       .catch((error) => {
+    //         console.error(error);
+    //       });
+    //   }, [_id]);
 
     const deadline = detail.Application_Deadline;
     const currentDate = new Date().toISOString().split('T')[0];
     const isDatePassed = currentDate > deadline;
 
-    const handleApply = () => {
+    const handleApply = (object,user) => {
         const name = user.displayName;
         const email = user.email;
         const applyJob  = { name, email, detail};
@@ -55,6 +59,7 @@ const JobsDetails = () => {
           })
           .then((res) => res.json())
           .then((data) => { 
+            console.log(data)
             if(data.insertedId){
               Swal.fire({
                 icon: "success",
@@ -116,7 +121,7 @@ const JobsDetails = () => {
                                             <input type="text" name="email" className="input input-bordered rounded-full" defaultValue={user.email} required />
                                         </div>
                                         <div className="flex mt-4">
-                                        <button onClick={handleApply} className="btn btn-glass rounded-full">Submit Application</button>
+                                        <button onClick={() => handleApply(detail, user)} className="btn btn-glass rounded-full">Submit Application</button>
                                         <button className="btn btn-glass rounded-full">Close</button>
                                         </div>
                                     </form>

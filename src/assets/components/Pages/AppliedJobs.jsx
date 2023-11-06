@@ -4,7 +4,6 @@ import Footer from '../Layout/Footer';
 import Navbar from '../Layout/Navbar';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import Swal from 'sweetalert2';
-import { appleAlt } from 'fontawesome';
 
 const AppliedJobs = () => {
     const {user} = useContext(AuthContext);
@@ -55,7 +54,7 @@ const AppliedJobs = () => {
     }
 
     const [category, setCategory] = useState('all');
-    const appli = category === 'all' ? applications : applications.map(application => application.email === user.email);
+    // const appli = category === 'all' ? applications : applications.map(application => application.email === user.email);
     // .filter(application => application.detail.Job_Category === category);
     
   
@@ -130,9 +129,8 @@ const AppliedJobs = () => {
               <h1 className='text-4xl font-bold my-6 text-center'>Your Applications:</h1>
             </div>
             <div>
-            {applications.map(application => (
-                application.email === user.email && (
-
+                {applications
+                .map(application => (application.email === user.email && (
                         <div key={application._id} className="hero  bg-gray-200">
                           <div className="hero-content flex-col lg:flex-row-reverse gap-10">
                             <img src={application.detail.Picture_URL} className="w-56 h-56 rounded-lg shadow-2xl" />
