@@ -22,7 +22,6 @@ const Home = () => {
           .then((res) => res.json())
           .then((data) => {
             setJobs(data);
-            console.log(data);
           })
           .catch((error) => {
             console.error(error);

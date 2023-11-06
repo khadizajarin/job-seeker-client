@@ -1,5 +1,5 @@
-import { useContext } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
 
@@ -7,6 +7,18 @@ import Swal from "sweetalert2";
 const Navbar = () => {
 
     const {user, logOut} = useContext(AuthContext);
+
+        // const location = useLocation();
+        // useEffect(() => {
+        //     console.log('Current route:', location.pathname); 
+        // }, [location]); 
+        const location = useLocation();
+        const [currentRoute, setCurrentRoute] = useState('');
+
+        useEffect(() => {
+            const routeWithoutLeadingSlash = location.pathname.slice(1);
+            setCurrentRoute(routeWithoutLeadingSlash);
+        }, [location, currentRoute]);
 
     const handleLogOut = () => {
         logOut()
@@ -39,8 +51,6 @@ const Navbar = () => {
             <li> <NavLink to='/addJobs' style={({ isActive }) => ({ 
                 color: isActive ? 'white' : '' })}>Add a Job</NavLink></li></>
         }
-        
-
         </ >
 
     const details = <>
@@ -82,7 +92,7 @@ const Navbar = () => {
             
             <div className="navbar-center">
                 <img className="w-8 rounded-full" src="https://media.istockphoto.com/id/1402623660/photo/glass-lowercase-letter-e.jpg?s=2048x2048&w=is&k=20&c=fR_rnKVqJBv3pkHJgfDBtQJSB9oyl7PzWMfe8fL_BAE=" alt="" />
-                <p className="btn btn-ghost normal-case text-xl">JobQuest</p>
+                <p className="btn btn-ghost normal-case text-xl">JobQuest | {currentRoute === '' ? 'Home' : currentRoute}</p>
             </div>
             <div className="navbar-end">
                 {
