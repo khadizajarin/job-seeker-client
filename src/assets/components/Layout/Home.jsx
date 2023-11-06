@@ -9,7 +9,11 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Fade } from "react-awesome-reveal";
 
+import {motion, AnimatePresence} from "framer-motion";
+import "../Pages/styles.css";
+
 const Home = () => {
+
     const [jobs, setJobs] = useState([]);
 
     useEffect(() => {
@@ -47,10 +51,12 @@ const Home = () => {
                 Apple Inc. is an equal opportunity employer.
             </Marquee>
 
+
+            {/* tab for jobs */}
             <div className="max-w-7xl  mx-auto">
                 <h1 className="text-7xl mx-7 my-4">Types of Jobs You Can Find!</h1>
                 {/* tab list 1 */}
-                <div className="mx-10">
+                <motion.div className="mx-10" initial={{ x : 200, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 1 }}>
                     <h1 className="font-bold text-3xl my-4">All Jobs</h1>
                     <div >
                     <Tabs>
@@ -80,10 +86,10 @@ const Home = () => {
                     </Tabs>
 
                     </div>
-                </div>
+                </motion.div>
 
                 {/* tab list 2 */}
-                <div className="mx-10">
+                <motion.div className="mx-10" initial={{ x : 200, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 1 }}>
                     <h1 className="font-bold text-3xl my-4">Remote Jobs</h1>
                     <div >
                     <Tabs>
@@ -117,10 +123,10 @@ const Home = () => {
                             </TabPanel>
                         </Tabs>
                     </div>
-                </div>
+                </motion.div>
 
                 {/* tab list 3 */}
-                <div className="mx-10">
+                <motion.div className="mx-10" initial={{ x : 200, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 1 }}>
                     <h1 className="font-bold text-3xl my-4">On Site Jobs</h1>
                     <div >
                     <Tabs>
@@ -154,11 +160,11 @@ const Home = () => {
                             </TabPanel>
                         </Tabs>
                     </div>
-                </div>
+                </motion.div>
 
 
                 {/* tab list 4 */}
-                <div className="mx-10">
+                <motion.div className="mx-10" initial={{ x : 200, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 1 }}>
                     <h1 className="font-bold text-3xl my-4">Part Time Jobs</h1>
                     <div >
                     <Tabs>
@@ -192,11 +198,11 @@ const Home = () => {
                             </TabPanel>
                         </Tabs>
                     </div>
-                </div>
+                </motion.div>
 
 
                 {/* tab list  5*/}
-                <div className="mx-10">
+                < motion.div className="mx-10" initial={{ x : 200, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 1 }}>
                     <h1 className="font-bold text-3xl my-4">Hybrid </h1>
                     <div >
                     <Tabs>
@@ -230,9 +236,11 @@ const Home = () => {
                             </TabPanel>
                         </Tabs>
                     </div>
-                </div>
+                </motion.div>
             </div>
 
+
+            {/* fade animation added */}
             <hr className="divider" />
             <div className="text-center font-bold text-5xl bg-slate-300 mx-auto max-w-7xl" >
                 
@@ -254,7 +262,10 @@ const Home = () => {
             <hr className="divider" />
 
 
-            <div className="grid lg:grid-cols-2 lg:max-w-7xl lg:mx-auto mt-6 justify-between items-center">
+
+            {/* CV sample */} 
+            
+            {/* <div className="grid lg:grid-cols-2 lg:max-w-7xl lg:mx-auto mt-6 justify-between items-center">
                 <div className="text-center" > 
                     <p className=" m-4">A Curriculum Vitae (CV) is a comprehensive document that provides a detailed account of an individual educational and professional history. Typically used for academic and research positions, a CV includes sections like personal information, education, work experience, publications, awards, skills, and references. Unlike a resume, a CV can be extensive, with no strict length restrictions, and is highly customized to the specific job or opportunity being pursued. It often follows a chronological format, emphasizing the most recent achievements and experiences. CVs are commonly used in academic and research contexts and are favored in many countries, especially in Europe, for their ability to showcase an individuals qualifications and expertise in-depth.</p>
                     <p className="text-3xl font-bold ">
@@ -310,7 +321,67 @@ const Home = () => {
                         </ul>
                     </section>
                 </div>
+            </div> */}
+            <div className="grid lg:grid-cols-2 lg:max-w-7xl lg:mx-auto mt-6 justify-between items-center">
+                <motion.div className="text-center" initial={{ x : 200, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 1 }}>
+                <p className="m-4">A Curriculum Vitae (CV) is a comprehensive document that provides a detailed account of an individuals educational and professional history. Typically used for academic and research positions, a CV includes sections like personal information, education, work experience, publications, awards, skills, and references. Unlike a resume, a CV can be extensive, with no strict length restrictions, and is highly customized to the specific job or opportunity being pursued. It often follows a chronological format, emphasizing the most recent achievements and experiences. CVs are commonly used in academic and research contexts and are favored in many countries, especially in Europe, for their ability to showcase an individuals qualifications and expertise in-depth.</p>
+                <p className="text-3xl font-bold">
+                John Doe shared his resume for sample. Let us have a short look
+                </p>
+                </motion.div>
+                <motion.div className="cv-container" initial={{ x: -200, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 1 }}>
+                    <header>
+                    <motion.h1 className="font-bold text-lg mt-4">John Doe</motion.h1>
+                    <motion.p>Web Developer</motion.p>
+                    </header>
+
+                    <section className="contact">
+                    <motion.h2 className="font-bold text-lg mt-4">Contact Information</motion.h2>
+                    <address>
+                        <motion.p>Email: john@example.com</motion.p>
+                        <motion.p>Phone: (123) 456-7890</motion.p>
+                        <motion.p>Website: www.johndoe.com</motion.p>
+                        <motion.p>LinkedIn: www.linkedin.com/in/johndoe</motion.p>
+                    </address>
+                    </section>
+
+                    <section className="education">
+                    <motion.h2 className="font-bold text-lg mt-4">Education</motion.h2>
+                    <div className="education-entry">
+                        <h3>University of Computer Science</h3>
+                        <p>Bachelor of Science in Computer Science</p>
+                        <p>Graduated: May 20XX</p>
+                    </div>
+                    </section>
+
+                    <section className="experience">
+                    <motion.h2 className="font-bold text-lg mt-4">Work Experience</motion.h2>
+                    <div className="experience-entry">
+                        <h3>ABC Tech Inc.</h3>
+                        <p>Web Developer</p>
+                        <p>June 20XX - Present</p>
+                        <ul>
+                        <li>Developed and maintained web applications using React and Node.js.</li>
+                        <li>Collaborated with a team to implement new features and improve user experience.</li>
+                        </ul>
+                    </div>
+                    </section>
+
+                    <section className="skills">
+                    <motion.h2 className="font-bold text-lg mt-4">Skills</motion.h2>
+                    <ul>
+                        <li>JavaScript</li>
+                        <li>React</li>
+                        <li>Node.js</li>
+                        <li>HTML/CSS</li>
+                        <li>Version Control (Git)</li>
+                    </ul>
+                    </section>
+                </motion.div>
             </div>
+
+
+
 
             <div className="flex flex-col lg:lex-row gap-4 max-w-7xl mx-auto my-12  items-center justify-center">
                 <div className="text-6xl">Tell us how did you feel to <br /> visit our site by swapping!</div>

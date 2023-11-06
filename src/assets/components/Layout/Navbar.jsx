@@ -58,7 +58,7 @@ const Navbar = () => {
             user ?
         <>
         <p className=" mr-4 md:block hidden">{user.displayName}</p>
-        <img className="rounded-full w-12 mr-4 "  src={user.photoURL} alt="" />
+        <img className="rounded-full w-12 mr-4  md:block hidden"  src={user.photoURL} alt="" />
         <button className="btn btn-glass rounded-full" onClick={handleLogOut}>Logout</button>
         </> :
         <> 

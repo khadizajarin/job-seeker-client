@@ -4,7 +4,6 @@ import Footer from '../Layout/Footer';
 import { useEffect, useState } from 'react';
 import { animated, useSpring } from '@react-spring/web'
 import { Link } from 'react-router-dom';
-import { motion } from "framer-motion"
 
 const AllJobs = () => {
 
@@ -97,25 +96,6 @@ const AllJobs = () => {
         )}
       </div>
       
-        {/* <div>
-          {jobs.map((job) => (
-            <div key={job._id}>
-                <animated.h1 style={nameAnimation}>
-                    <div  className="card lg:card-side p-10 bg-zinc-300 lg:mx-40 mb-6">
-                        <figure><img className='w-60 h-60' src={job.Picture_URL} alt="Album"/></figure>
-                        <div className="card-body">
-                            <h2 className="card-title">{job.Job_Title}</h2>
-                            <p>{job.Job_Description}.</p>
-                            <p></p>
-                            <div className="card-actions justify-end">
-                            <button className="btn btn-glass rounded-full"> <Link to={`/allJobs/${job._id}`}>Details</Link></button>
-                            </div>
-                        </div>
-                    </div>
-                </animated.h1>    
-            </div>
-          ))}
-        </div> */}
         <Footer></Footer>
       </div>
       );
