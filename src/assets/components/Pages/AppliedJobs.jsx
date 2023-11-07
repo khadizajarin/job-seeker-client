@@ -13,7 +13,7 @@ const AppliedJobs = () => {
     const { toPDF, targetRef } = usePDF({filename: 'page.pdf'});
 
     useEffect(() => {
-        fetch('https://job-seeker-server-side-4fmki4zfv-khadizajarin.vercel.app/applied', {
+        fetch('https://job-seeker-server-side.vercel.app/applied', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -39,7 +39,7 @@ const AppliedJobs = () => {
             confirmButtonText: 'Yes, delete it!'
           }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`https://job-seeker-server-side-4fmki4zfv-khadizajarin.vercel.app/applied/${_id}`, {
+                fetch(`https://job-seeker-server-side.vercel.app/applied/${_id}`, {
                     method: 'DELETE'
                 })
                 .then(res => res.json())

@@ -25,7 +25,7 @@ const AllJobs = () => {
 
 
     useEffect(() => {
-        fetch('https://job-seeker-server-side-4fmki4zfv-khadizajarin.vercel.app/Jobs', {
+        fetch('https://job-seeker-server-side.vercel.app/jobs', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -36,7 +36,7 @@ const AllJobs = () => {
             setJobs(data);
           })
           .catch((error) => {
-            console.error(error);
+          console.error(error);
           });
       }, []);
 

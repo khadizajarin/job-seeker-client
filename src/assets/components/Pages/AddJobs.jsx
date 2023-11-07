@@ -28,7 +28,7 @@ const AddJobs = () => {
     
             console.log(newJob);
     
-            fetch('https://job-seeker-server-side-4fmki4zfv-khadizajarin.vercel.app/Jobs',{
+            fetch('https://job-seeker-server-side.vercel.app/jobs',{
                 method: 'POST',
                 headers: {
                     'content-type' : 'application/json'

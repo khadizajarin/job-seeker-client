@@ -18,7 +18,7 @@ const JobsDetails = () => {
     const {_id, Job_Title} = detail;
 
     // useEffect(() => {
-    //     fetch(`https://job-seeker-server-side-4fmki4zfv-khadizajarin.vercel.app/Jobs/${_id}`, {
+    //     fetch(`https://job-seeker-server-side.vercel.app/Jobs/${_id}`, {
     //       method: 'GET',
     //       headers: {
     //         'Content-Type': 'application/json',
@@ -50,7 +50,7 @@ const JobsDetails = () => {
               }))
         }
 
-        fetch('https://job-seeker-server-side-4fmki4zfv-khadizajarin.vercel.app/applied',{
+        fetch('https://job-seeker-server-side.vercel.app/applied',{
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',

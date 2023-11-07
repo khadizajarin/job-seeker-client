@@ -20,7 +20,7 @@ const Banner = () => {
             <div className="hero-content text-center text-neutral-content">
                
             <animated.h1 style={nameAnimation}>
-                    <h1 className="mb-5 text-5xl font-bold">JobQuest</h1> 
+                    <p className="mb-5 text-5xl font-bold">JobQuest</p> 
                     <p className="mb-5">JobQuest is your ultimate destination for finding the ideal job and advancing your career. We connect job seekers with a wide range of opportunities, from entry-level positions to executive roles, in various industries and locations.</p>
                     <div className="flex">
                         <input type="text" placeholder="Search here" className="p-4 h-12 w-full rounded-l-full text-black" />
