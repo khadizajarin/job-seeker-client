@@ -34,7 +34,7 @@ const UpdateJob = () => {
         
                 console.log(updatedJob);
 
-                fetch(`http://localhost:5000/Jobs/${_id}`,{
+                fetch(`https://job-seeker-server-side-4fmki4zfv-khadizajarin.vercel.app/Jobs/${_id}`,{
                     method: 'PUT',
                     headers: {
                         'content-type' : 'application/json'

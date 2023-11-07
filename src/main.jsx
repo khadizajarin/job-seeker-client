@@ -61,12 +61,12 @@ const router = createBrowserRouter([
       {
         path:'/allJobs/:id',
         element:<PrivateRoute><JobsDetails></JobsDetails></PrivateRoute>,
-        loader: ({params})=> fetch(`http://localhost:5000/Jobs/${params.id}`)
+        loader: ({params})=> fetch(`https://job-seeker-server-side-4fmki4zfv-khadizajarin.vercel.app/Jobs/${params.id}`)
       },
       {
         path: '/update/:id',
         element:<PrivateRoute><UpdateJob></UpdateJob></PrivateRoute>,
-        loader: ({params})=> fetch(`http://localhost:5000/Jobs/${params.id}`)
+        loader: ({params})=> fetch(`https://job-seeker-server-side-4fmki4zfv-khadizajarin.vercel.app/Jobs/${params.id}`)
       }
       
     ]

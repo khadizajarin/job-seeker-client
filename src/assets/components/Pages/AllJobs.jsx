@@ -25,7 +25,7 @@ const AllJobs = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/Jobs', {
+        fetch('https://job-seeker-server-side-4fmki4zfv-khadizajarin.vercel.app/Jobs', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -43,17 +43,14 @@ const AllJobs = () => {
       return (
         <div>
         <Navbar></Navbar>
-        <div className="flex m-10">
-          <input type="text" placeholder="Search by title" className="p-4 h-12 w-full rounded-l-full text-black" value={searchInput} onChange={(e) => setSearchInput(e.target.value)}
+        <div className="flex m-10 max-w-2xl mx-auto">
+          <input type="text" placeholder="Search by title" className="p-4 h-12 w-full rounded-l-full text-black border" value={searchInput} onChange={(e) => setSearchInput(e.target.value)}
           />
-          <button className="bg-gray-700 px-4 h-12 rounded-r-full" onClick={() => {
+          <button className="bg-gray-700 px-4 h-12 rounded-r-full text-white" onClick={() => {
               const filtered = jobs.filter(
-                (job) =>
-                  job.Job_Title.toLowerCase().includes(searchInput.toLowerCase())
-              );
+                (job) => job.Job_Title.toLowerCase().includes(searchInput.toLowerCase()));
               setFilteredJobs(filtered);
-            }}
-          >Search</button>
+            }}>Search</button>
         </div>
 
         <div>

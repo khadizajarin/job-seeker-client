@@ -1,8 +1,7 @@
-# React + Vite
+This React project implements a feature-rich website with user authentication, a dynamic navigation bar, login and registration systems, homepage with job listings, blog section, and pages for managing personal job listings and viewing applied jobs. The project provides a comprehensive web application with user-friendly features and functionalities. The site can be accessed through this link
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. A responsive website with a feature-rich navigation bar, dynamically displaying elements like user profile picture, login button, and conditional options based on user login status.
+2. Robust login and registration systems, providing users with email/password and Google Sign-in options, along with an error message display when necessary.
+3. A visually appealing homepage with a banner section, a tab system for job categories, and job card details, featuring the ability to view job details while prompting unregistered users to log in.
+4. A blog page where users can learn about access tokens, refresh tokens, Express.js, and Nest.js, offering explanations and discussions on these topics.
+5. Additional pages for viewing all jobs, single job details, adding a job, managing personal job listings, and viewing applied jobs, each with specific functionalities and conditional access restrictions based on user roles.

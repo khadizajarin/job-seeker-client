@@ -16,7 +16,7 @@ const Home = () => {
     const [jobs, setJobs] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/Jobs', {
+        fetch('https://job-seeker-server-side-4fmki4zfv-khadizajarin.vercel.app/Jobs', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -264,63 +264,6 @@ const Home = () => {
 
             {/* CV sample */} 
             
-            {/* <div className="grid lg:grid-cols-2 lg:max-w-7xl lg:mx-auto mt-6 justify-between items-center">
-                <div className="text-center" > 
-                    <p className=" m-4">A Curriculum Vitae (CV) is a comprehensive document that provides a detailed account of an individual educational and professional history. Typically used for academic and research positions, a CV includes sections like personal information, education, work experience, publications, awards, skills, and references. Unlike a resume, a CV can be extensive, with no strict length restrictions, and is highly customized to the specific job or opportunity being pursued. It often follows a chronological format, emphasizing the most recent achievements and experiences. CVs are commonly used in academic and research contexts and are favored in many countries, especially in Europe, for their ability to showcase an individuals qualifications and expertise in-depth.</p>
-                    <p className="text-3xl font-bold ">
-                    John Doe shared his resume for sample. Let us have a short look
-                    </p>
-                </div>
-                <div className="cv-container">
-                    <header>
-                        <h1 className="font-bold text-lg mt-4">John Doe</h1>
-                        <p>Web Developer</p>
-                    </header>
-
-                    <section className="contact">
-                        <h2 className="font-bold text-lg mt-4">Contact Information</h2>
-                        <address>
-                        <p>Email: john@example.com</p>
-                        <p>Phone: (123) 456-7890</p>
-                        <p>Website: www.johndoe.com</p>
-                        <p>LinkedIn: www.linkedin.com/in/johndoe</p>
-                        </address>
-                    </section>
-
-                    <section className="education">
-                        <h2 className="font-bold text-lg mt-4">Education</h2>
-                        <div className="education-entry">
-                        <h3>University of Computer Science</h3>
-                        <p>Bachelor of Science in Computer Science</p>
-                        <p>Graduated: May 20XX</p>
-                        </div>
-                    </section>
-
-                    <section className="experience">
-                        <h2 className="font-bold text-lg mt-4">Work Experience</h2>
-                        <div className="experience-entry">
-                        <h3>ABC Tech Inc.</h3>
-                        <p>Web Developer</p>
-                        <p>June 20XX - Present</p>
-                        <ul>
-                            <li>Developed and maintained web applications using React and Node.js.</li>
-                            <li>Collaborated with a team to implement new features and improve user experience.</li>
-                        </ul>
-                        </div>
-                    </section>
-
-                    <section className="skills">
-                        <h2 className="font-bold text-lg mt-4">Skills</h2>
-                        <ul>
-                        <li>JavaScript</li>
-                        <li>React</li>
-                        <li>Node.js</li>
-                        <li>HTML/CSS</li>
-                        <li>Version Control (Git)</li>
-                        </ul>
-                    </section>
-                </div>
-            </div> */}
             <div className="grid lg:grid-cols-2 lg:max-w-7xl lg:mx-auto mt-6 justify-between items-center">
                 <motion.div className="text-center" initial={{ x : 200, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 1 }}>
                 <p className="m-4">A Curriculum Vitae (CV) is a comprehensive document that provides a detailed account of an individuals educational and professional history. Typically used for academic and research positions, a CV includes sections like personal information, education, work experience, publications, awards, skills, and references. Unlike a resume, a CV can be extensive, with no strict length restrictions, and is highly customized to the specific job or opportunity being pursued. It often follows a chronological format, emphasizing the most recent achievements and experiences. CVs are commonly used in academic and research contexts and are favored in many countries, especially in Europe, for their ability to showcase an individuals qualifications and expertise in-depth.</p>

@@ -17,7 +17,7 @@ const MyJobs = () => {
      
 
     useEffect(() => {
-        fetch('http://localhost:5000/Jobs', {
+        fetch('https://job-seeker-server-side-4fmki4zfv-khadizajarin.vercel.app/Jobs', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -43,7 +43,7 @@ const MyJobs = () => {
             confirmButtonText: 'Yes, delete it!'
           }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/Jobs/${_id}`, {
+                fetch(`https://job-seeker-server-side-4fmki4zfv-khadizajarin.vercel.app/Jobs/${_id}`, {
                     method: 'DELETE'
                 })
                 .then(res => res.json())
