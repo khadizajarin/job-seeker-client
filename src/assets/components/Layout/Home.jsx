@@ -69,7 +69,7 @@ const Home = () => {
                         {jobs.slice(0, 2).map((job) => (
                             <TabPanel key={job._id}>
                             <h2>{job.Job_Description}</h2>
-                            <p>{job.Job_Description}</p>
+                            <p>{job.Employer_Name}</p>
                                 <p>{job.Job_Category}</p>
                                 <p>{job.Salary_Range}</p>
                                 <p> Posted on : {job.Job_Posting_Date}</p>
@@ -108,7 +108,7 @@ const Home = () => {
                             .map((job) => (
                             <TabPanel key={job._id}>
                                 <h2>{job.Job_Description}</h2>
-                                <p>{job.Job_Description}</p>
+                                <p>{job.Employer_Name}</p>
                                 <p>{job.Job_Category}</p>
                                 <p>{job.Salary_Range}</p>
                                 <p> Posted on : {job.Job_Posting_Date}</p>
@@ -145,7 +145,7 @@ const Home = () => {
                             .map((job) => (
                             <TabPanel key={job._id}>
                                 <h2>{job.Job_Description}</h2>
-                                <p>{job.Job_Description}</p>
+                                <p>{job.Employer_Name}</p>
                                 <p>{job.Job_Category}</p>
                                 <p>{job.Salary_Range}</p>
                                 <p> Posted on : {job.Job_Posting_Date}</p>
@@ -183,7 +183,7 @@ const Home = () => {
                             .map((job) => (
                             <TabPanel key={job._id}>
                                 <h2>{job.Job_Description}</h2>
-                                <p>{job.Job_Description}</p>
+                                <p>{job.Employer_Name}</p>
                                 <p>{job.Job_Category}</p>
                                 <p>{job.Salary_Range}</p>
                                 <p> Posted on : {job.Job_Posting_Date}</p>
@@ -221,7 +221,7 @@ const Home = () => {
                             .map((job) => (
                             <TabPanel key={job._id}>
                                 <h2>{job.Job_Description}</h2>
-                                <p>{job.Job_Description}</p>
+                                <p>{job.Employer_Name}</p>
                                 <p>{job.Job_Category}</p>
                                 <p>{job.Salary_Range}</p>
                                 <p> Posted on : {job.Job_Posting_Date}</p>
